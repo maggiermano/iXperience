@@ -2,70 +2,158 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="intro.css">
-        <title>Me</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Maggie R. Mano</title>
+
+        <link rel="stylesheet" type="text/css" href="album.css">
+        <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
-    <body id="home">
-        <div class="center">
-            <header>
-                Introducing Me
+    <body>
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                      <h4 class="text-white">Introducing Me</h4>
+                      <p class="text-muted">
+                          This is a page introducing me and my hobbies to my iXperience community.
+                          Enjoy some pictures and videos of me and my family and friends. Feel free to contact
+                          me using the resources to the right.
+                      </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                      <h4 class="text-white">Contact</h4>
+                      <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/mibs563/" target="_blank" class="text-white">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/maggie.mano.56/" target="_blank" class="text-white">Facebook</a></li>
+                        <li><a href="mailto: maggiemano@college.harvard.edu" target="_blank" class="text-white">Email me</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="navbar navbar-dark bg-dark box-shadow">
+                <div class="container d-flex justify-content-between">
+                  <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>Maggie R. Mano</strong>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+              </div>
             </header>
-            <section>
-                <main>
-                    <article>
-                            <img src="smiling.jpeg" alt="A picture of me smiling" class="centeri"/>
-                        <h2 id="java" style="font-size: 2em; text-align: center;">Wazzuuuuuuuuuuuuuup</h2>
-                        <h4 style="text-align: center;">My Github: maggiermano</h4>
-                        <p>
-                            Hey Everyone!!! I'm Maggie Rufaro Mano and I'm so excited to be starting my journey
+                <main role="main">
+                    <section class="jumbotron text-center">
+                      <div class="container">
+                        <h1 class="jumbotron-heading">Wazzuuuuuuuuuuuuuup</h1>
+                        <p class="lead text-muted">Hey Everyone!!! I'm Maggie Rufaro Mano and I'm so excited to be starting my journey
                             at iXperience with all of you. I'm from Harare, Zimbabwe and I'm currently a rising 
                             junior at Harvard University in Cambridge, Massachussets. I am pursing a degree in 
                             Computer Science and I am ready to enhance my skills to better my understanding and 
                             knowledge of the software engineering industry!
                         </p>
                         <p>
-                            Here's a couple interests and hobbies of mine:
-                            <ul>
-                                <li>Football (watching, playing, eating, breathing) </li>
-                                <li>Marvel</li>
-                                <li>Coloring</li>
-                                <li>Hanging with my best friend</li>
-                            </ul>
+                          <a href="#" class="btn btn-primary my-2">Read More</a>
                         </p>
-                        <p>
-                            I hope you've enjoyed learning a bit about me and I can't wait to get to know all of you!!
-                        </p>
-                        <div class="row">
-                            <div class="column">
-                              <img src="sanfran.jpg" alt="Me in front of the Golden Gate Bridge" style="width:100%">
-                            </div>
-                            <div class="column">
-                                <video style="width:100%;padding:-50px;" controls>
-                                    <source src="footy.mp4">
-                                </video>
-                            </div>
-                            <div class="column">
-                              <img src="walking.jpg" alt="Me at Domboshawa in Zimbabwe" style="width:100%; padding-left:90px;">
-                            </div>
-                        </div>
-                    </article>
-                </main>
-                <footer>
-                    <div class="container">
-                        <form style="margin:auto;text-align: center;">
-                          <p>Please select your favorite Primary Color:</p>
-                            <input type="radio" id="red" name="fav_color" value="Red">
-                            <label for="red">Red</label><br>
-                            <input type="checkbox" id="blue" name="fav_color" value="Blue">
-                            <label for="blue">Blue</label><br>
-                            <input type="text" id="yellow" name="fav_color" placeholder="Yellow">
-                        </form>
                       </div>
-                </footer>
-            </section>          
-        </div>
-        <script type="text/javascript" src="intro.js">
-        </script>
+                    </section>
+                    <div class="album py-5 bg-light">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                              <img class="card-img-top" src="static/sanfran.jpg" alt="Me in San Francisco">
+                              <div class="card-body">
+                                <p class="card-text">
+                                    Although I grew up in Zimbabwe my whole life, San Francisco is like a second home to me. 
+                                    My mom is from California, so growing up we would visit San Francisco a lot. Funnily enough
+                                    I never had an actual picture with the Golden Gate Bridge until last year! 
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                              <img class="card-img-top" src="static/smiling.jpeg" alt="Me smiling">
+                              <div class="card-body">
+                                <p class="card-text">
+                                    This is a special picture because it represents my first year living away from home in Cambridge, MA.
+                                    The Zimbabwe flag in the background hangs proudly over my bed as a reminder of home. 
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                              <img class="card-img-top" src="static/walking.jpg" alt="Hiking in Domboshawa">
+                              <div class="card-body">
+                                <p class="card-text">
+                                    Hiking in the scenic and beautiful Domboshawa which is a popular spot for sunset walks.
+                                    It is definitely one of my favorite places in Zimbabwe to unwind and enjoy a spectacular
+                                    view with friends and family.  
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                              <img class="card-img-top" src="static/fungai.jpeg" alt="Fungai and I">
+                              <div class="card-body">
+                                <p class="card-text">
+                                    This is a picture of me and boyfriend Fungai. Fungai is a very important part of my life
+                                    and he has been my best friend as well for over 4 years. During our time in the US, one 
+                                    of our favorite activities has been watching NBA matches. Our favorite team is the Boston
+                                    Celtics. We always have so much fun together!! 
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <video style="width:100%;padding:-50px;" controls>
+                                    <source src="static/footy.mp4">
+                                </video>
+                              <div class="card-body">
+                                <p class="card-text">
+                                    I'm a huge football fan and I support Arsenal, Barcelona, Hoffenheim and Wolverhampton Wanderers.
+                                    I watch football almost everyday and if I'm not watching it I'm talking about it. Football is my life!!!!
+                                    I love playing football too as you can see in this video which was taken before a recent match.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                              <img class="card-img-top" src="static/sisters.JPG" alt="Picture of me and my sisters">
+                              <div class="card-body">
+                                <p class="card-text">
+                                    Family is very important to me and I grew up with my four sisters: Grace, Esther, Eunice and Fadzai.
+                                    Growing up with them was truly a never-ending adventure and I wouldn't trade it for anything in the world.
+                                    Although we live apart now, whenever we meet up we have so much fun and it's always constant laughter.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                  </main>
+                  <footer class="text-muted">
+                    <div class="container">
+                      <p class="float-right">
+                        <a href="#">Back to top</a>
+                      </p>
+                    </div>
+            </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
     </body>
 </html>
