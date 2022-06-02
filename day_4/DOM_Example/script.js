@@ -22,11 +22,54 @@ container.appendChild(newElem);
 
 //console.log(anElem); */
 
+
 const form = document.getElementById("form");
 const nameInput = document.getElementById("name-input");
 const surnameInput = document.getElementById("surname-input");
 const button = document.getElementById("button");
 
-form.addEventListener('mouseenter', () => {
-    
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    console.log(nameInput.value + " "  + surnameInput.value);
+
+    nameInput.value = '';
+    surnameInput.value = '';
+    localStorage.clear();
 });
+
+nameInput.addEventListener('keypresser', (event) => {
+    localStorage.setItem('name', event.target.value);
+})
+
+nameInput.addEventListener('change', (event) => {
+    localStorage.setItem('name', event.target.value);
+})
+
+surnameInput.addEventListener('keypresser', (event) => {
+    localStorage.setItem('name', event.target.value);
+})
+
+surnameInput.addEventListener('change', (event) => {
+    localStorage.setItem('name', event.target.value);
+})
+
+nameInput.value = localStorage.getItem('name');
+surnameInput.value = localStorage.getItem('surname');
+
+/* nameInput.addEventListener('change',(event)=> {
+    console.log(event);
+})
+
+surnameInput.addEventListener('keypress', (event) => {
+    console.log(event);
+})
+
+form.addEventListener('click', (event) => {
+    console.log('Form Click', event);
+})
+
+button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    console.log('Button Click', event);
+}) */
