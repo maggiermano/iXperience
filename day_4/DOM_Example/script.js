@@ -38,7 +38,7 @@ form.addEventListener('submit', (event) => {
     localStorage.clear();
 });
 
-nameInput.addEventListener('keypresser', (event) => {
+nameInput.addEventListener('keydown', (event) => {
     localStorage.setItem('name', event.target.value);
 })
 
@@ -46,7 +46,7 @@ nameInput.addEventListener('change', (event) => {
     localStorage.setItem('name', event.target.value);
 })
 
-surnameInput.addEventListener('keypresser', (event) => {
+surnameInput.addEventListener('keydown', (event) => {
     localStorage.setItem('name', event.target.value);
 })
 
