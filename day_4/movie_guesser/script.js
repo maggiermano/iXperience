@@ -31,7 +31,7 @@ window.addEventListener('load', (event) => {
         const element = document.createElement('div');
         element.classList.add('alert');
 
-        if (input.value  == movies[randomNumber].title) {
+        if (input.value.toLowerCase()  == movies[randomNumber].title.toLowerCase()) {
             element.classList.add('alert-success');
             element.innerHTML = 'You guessed correctly! The movie was ' + movies[randomNumber].title + '.';
         } else {
@@ -46,6 +46,7 @@ window.addEventListener('load', (event) => {
         output.innerHTML = '';
         
         const element = document.createElement('div');
+        element.classList.add('alert');
         element.classList.add('alert-info');
 
         element.innerHTML = movies[randomNumber].hint;
