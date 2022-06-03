@@ -13,32 +13,29 @@
 </head>
 <body class="bg-dark">
     <div class="container my-5">
-        <div class="card p-4 text-center">
-            <h1 class="mb-4">Loan Calculator</h1>
+        <div class="card p-3 text-center">
+            <h1>Loan Calculator</h1>
 
             <form id="form">
                 <div class="input-group mb-3">
-                    <span class="input-group-text">@</span>
-                    <input id="loan-input" type="text" class="form-control" placeholder="Loan">
+                    <span class="input-group-text">$</span>
+                    <input id="loan-input" type="number" class="form-control" placeholder="Loan">
                   </div>
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="">@</span>
+                    <span class="input-group-text" id="">%</span>
                     <input id="interest-input" type="text" class="form-control" placeholder="Interest">
                   </div>
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="">@</span>
-                    <input id="years-input" type="text" class="form-control" placeholder="Years to repay">
+                    <input id="years-input" type="number" class="form-control" placeholder="Years to repay">
                   </div>
-                <div>
+                <div class="d-grid gap-2 mt-3">
                 <button class="btn btn-primary" type="submit">
                     Calculate
                 </button>
                 </div>
             </form>
 
-            <div id="output" class="card p-2 mt-4 hide">
-                
-            </div>
+            <div id="output" class="card bold p-2 mt-3 hide"></div>
         </div>
     </div>
     <script src="script.js"></script>
