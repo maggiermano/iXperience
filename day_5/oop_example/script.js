@@ -32,4 +32,6 @@ const john = new Customer(
     'Premium'
 );
 
-console.log(john);
+john.firstName = 'Mike';
+
+console.log(john.getFullName("turner"));
