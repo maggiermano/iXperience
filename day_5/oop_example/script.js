@@ -34,4 +34,6 @@ const john = new Customer(
 
 john.firstName = 'Mike';
 
-console.log(john.getFullName("turner"));
+console.log(john);
+console.log(john.getFullName());
+console.log(john.getMembershipType());
