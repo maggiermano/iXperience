@@ -1,9 +1,14 @@
+.cards {
+    background-color: rgb(229, 229, 229);
+    border-color: black;
+}
+
 .hint {
     background-color: grey;
     border-color: grey;
 }
 
-.cards {
-    background-color: rgb(229, 229, 229);
-    border-color: black;
+.hint:hover {
+    background-color: rgb(114, 113, 113);
+    border-color: rgb(114, 113, 113);
 }
