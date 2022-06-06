@@ -5,6 +5,14 @@ class Book {
         this.author = author;
         this.isbn = isbn;
     }
+
+    static fromJSONObject(object) {
+        return new Book(
+            json.title,
+            json.author,
+            json.isbn,
+        );
+    }
 }
 
 class UserInterface {
@@ -118,9 +126,9 @@ class UserInterface {
         const json = localStorage.getItem('books');
         if (json) {
           const bookArr = JSON.parse(json);
-          this.books = bookArr.map(x => Book.fromJSON(x));
+          this.books = bookArr.map((ob) => Book.fromJSONObject(ob));
         }
     }
 }
 
-const ui = new UserInterface();
+new UserInterface();
