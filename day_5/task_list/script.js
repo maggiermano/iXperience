@@ -3,6 +3,12 @@ class Task {
     constructor(title) {
         this.title = title;
     }
+
+    static fromJSONObject(object) {
+        return new Task(
+            json.title,
+        );
+    }
 }
 
 class UserInterface {
@@ -118,10 +124,10 @@ class UserInterface {
     loadTasksFromLocalStorage() {
         const json = localStorage.getItem('tasks');
         if (json) {
-          const taskArr = JSON.parse(json);
-          this.tasks = taskArr.map(x => Task.fromJSON(x));
-        }
+            const taskArr = JSON.parse(json);
+            this.tasks = taskArr.map((ob) => Task.fromJSONObject(ob));
+          }
     }
 }
 
-const ui = new UserInterface();
+new UserInterface();
