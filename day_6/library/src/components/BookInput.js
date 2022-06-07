@@ -3,13 +3,22 @@ import React, { useState } from 'react';
 export default function BookInput(props) {
 
   const [book, setBook] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [isbn, setISBN] = useState("");
 
   function onBookFromSubmit(e) {
     e.preventDefault();
 
     props.onBookCreate(book);
+    props.onBookCreate(title);
+    props.onBookCreate(author);
+    props.onBookCreate(isbn);
 
     setBook('');
+    setTitle('');
+    setAuthor('');
+    setISBN('');
   }
 
   return (
@@ -20,8 +29,8 @@ export default function BookInput(props) {
               Title
             </label>
             <input
-              value={book}
-              onChange={(e) => setBook(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
 
               type="text"
               className="form-control" />
@@ -31,8 +40,8 @@ export default function BookInput(props) {
               Author
             </label>
             <input
-              value={book}
-              onChange={(e) => setBook(e.target.value)}
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
 
               type="text"
               className="form-control" />
@@ -42,8 +51,8 @@ export default function BookInput(props) {
               ISBN#
             </label>
             <input
-              value={book}
-              onChange={(e) => setBook(e.target.value)}
+              value={isbn}
+              onChange={(e) => setISBN(e.target.value)}
 
               type="text"
               className="form-control" />
