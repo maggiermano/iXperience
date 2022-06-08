@@ -22,11 +22,12 @@ function saveContact(contact) {
         
         setTimeout(() => {
 
-            reject(new Error('failed to save contact'));
+            resolve(contact);
+            //reject(new Error('failed to save contact'));
             
-    }, 5000);
-});
-
+        }, 5000);
+    
+    });
 }
 
 const newContact= {
@@ -36,17 +37,18 @@ const newContact= {
 
 renderPhonebook();
 
-const promise = saveContact(newContact);
+async function init() {
+    try {
+        //await the promise
+        const response = await saveContact(newContact);
 
-promise.then((response) => {
+        phoneBook.push(response);
+        renderPhonebook();
 
-    //handle success
-    phoneBook.push(response);
-    renderPhonebook();
+    } catch(err) {
+        //handle the error
+        alert(err.message);
+    }
+}
 
-}).catch((err) => {
-
-    //handle error
-    alert(err.message);
-
-})
+init();
