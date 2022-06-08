@@ -3,7 +3,7 @@
 
 
 const baseUrl = 'https://jsonplaceholder.typicode.com/';
-async function getTodos() {
+async function fetchTodos() {
   const url = baseUrl + 'todos/2';
   const response = await fetch(url, {
     method: 'GET',
@@ -44,7 +44,7 @@ async function updateTodo(todo) {
 
 async function init() {
   try {
-    const todos = await getTodos();
+    const todos = await fetchTodos();
     console.log('GET', todos);
 
     const response = await createTodo({
