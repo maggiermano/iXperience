@@ -1,68 +1,69 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import bootstrap styling from node_modules
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { auth } from './firebase/firebase';
+
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 import './App.css';
 
-// import the Task class from the models folder
-import { Task } from './models/task';
+// import the component pages
+import TasksPage from './components/tasks/TasksPage';
+import LoginPage from './components/auth/LoginPage';
+import RegisterPage from './components/auth/RegisterPage';
+import ProfilePage from './components/profile/ProfilePage';
 
-// import components from components folder
-import TaskInput from './components/TaskInput';
-import TaskTable from './components/TaskTable';
+import Navbar from './components/common/Navbar';
+import RequireAuth from './components/common/RequireAuth';
+import Spinner from './components/common/Spinner';
 
 export default function App() {
 
-  const [tasks, setTasks] = useState([]);
+  const [user, setUser] = useState(null);
+  const [isUserUpdated, setIsUserUpdated] = useState(false);
 
-  function onTaskCreate(name) {
-    // create the task
-    const task = new Task(
-      new Date().getTime(),
-      name,
-      false,
-    )
-
-    // add the task to the tasks state
-    setTasks([...tasks, task]);
-  }
-
-
-  function onTaskCompleteToggle(taskId) {
-    // toggle task completed state
-    const taskToToggle = tasks.find((task) => task.id === taskId);
-    taskToToggle.complete = !taskToToggle.complete;
-
-    // update the tasks state with the new updates state
-    setTasks(tasks.map((task) => {
-      return task.id === taskId ? taskToToggle : task;
-    }));
-  }
-
-  function onTaskRemove(taskId) {
-    // update the tasks state with the filtered tasks
-    setTasks(tasks.filter((task) => task.id !== taskId));
-  }
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setIsUserUpdated(true);
+    });
+  }, []);
 
   return (
-    <div className='container my-4'>
+    <BrowserRouter>
+      <Navbar user={user} />
+      {
+        isUserUpdated ?
+          <Routes>
+            <Route path='/' element={
+              <RequireAuth user={user}>
+                <TasksPage user={user} />
+              </RequireAuth>
+            } />
 
-      <div className='card card-body text-center'>
+            <Route path='/profile' element={
+              <RequireAuth user={user}>
+                <ProfilePage user={user} />
+              </RequireAuth>
+            } />
 
-        <h1>Task List</h1>
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/register' element={<RegisterPage />} />
+          </Routes>
+          :
+          <div className='mt-3 text-center'>
+            <Spinner />
+          </div>
+      }
 
-        <hr></hr>
-
-        <p>Our simple task list</p>
-
-        <TaskInput onTaskCreate={onTaskCreate} />
-
-        <TaskTable
-          onTaskCompleteToggle={onTaskCompleteToggle}
-          onTaskRemove={onTaskRemove}
-          tasks={tasks} />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }

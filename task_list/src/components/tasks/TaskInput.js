@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 
+import Spinner from '../common/Spinner';
+
 export default function TaskInput(props) {
 
   const [task, setTask] = useState("");
+  const [saving, setSaving] = useState(false);
 
-  function onTaskFromSubmit(e) {
+  async function onTaskFromSubmit(e) {
     e.preventDefault();
 
-    props.onTaskCreate(task);
+    setSaving(true);
+    await props.onTaskCreate(task);
+    setSaving(false);
 
     setTask('');
   }
@@ -24,10 +29,17 @@ export default function TaskInput(props) {
             className="form-control"
             placeholder="Task"
           />
+
           <button
             className="btn btn-outline-secondary"
+            disabled={saving}
             type="submit" >
-            +
+            {
+              saving ?
+                <Spinner />
+                :
+                '+'
+            }
           </button>
         </div>
       </form>
